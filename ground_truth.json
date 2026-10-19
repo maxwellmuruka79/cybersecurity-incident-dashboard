@@ -1,0 +1,517 @@
+[
+  {
+    "scenario": "brute_force",
+    "malicious": true,
+    "src_ip": "198.51.100.23",
+    "usernames": [
+      "lucy.s"
+    ],
+    "start": "2026-09-11T01:24:28+00:00",
+    "end": "2026-09-11T01:26:02+00:00"
+  },
+  {
+    "scenario": "forgetful_user",
+    "malicious": false,
+    "src_ip": "203.0.113.61",
+    "usernames": [
+      "irene.l"
+    ],
+    "start": "2026-09-11T08:09:03+00:00",
+    "end": "2026-09-11T08:11:53+00:00"
+  },
+  {
+    "scenario": "unusual_country",
+    "malicious": true,
+    "src_ip": "192.0.2.88",
+    "usernames": [
+      "john.k"
+    ],
+    "start": "2026-09-12T01:41:59+00:00",
+    "end": "2026-09-12T01:41:59+00:00"
+  },
+  {
+    "scenario": "office_nat",
+    "malicious": false,
+    "src_ip": "203.0.113.99",
+    "usernames": [
+      "esther.n",
+      "lucy.s",
+      "kamau.p",
+      "admin",
+      "john.k",
+      "cynthia.w"
+    ],
+    "start": "2026-09-13T08:33:14+00:00",
+    "end": "2026-09-13T08:36:10+00:00"
+  },
+  {
+    "scenario": "credential_stuffing",
+    "malicious": true,
+    "src_ip": "192.0.2.201",
+    "usernames": [
+      "root",
+      "admin",
+      "info",
+      "lucy.s",
+      "irene.l",
+      "backup",
+      "test",
+      "john.k",
+      "admin",
+      "esther.n",
+      "user"
+    ],
+    "start": "2026-09-13T09:52:42+00:00",
+    "end": "2026-09-13T09:54:43+00:00"
+  },
+  {
+    "scenario": "office_nat",
+    "malicious": false,
+    "src_ip": "203.0.113.99",
+    "usernames": [
+      "esther.n",
+      "john.k",
+      "lucy.s",
+      "brian.o",
+      "kamau.p",
+      "cynthia.w",
+      "david.m"
+    ],
+    "start": "2026-09-14T08:35:30+00:00",
+    "end": "2026-09-14T08:39:38+00:00"
+  },
+  {
+    "scenario": "account_compromise",
+    "malicious": true,
+    "src_ip": "192.0.2.9",
+    "usernames": [
+      "kamau.p"
+    ],
+    "start": "2026-09-14T21:33:17+00:00",
+    "end": "2026-09-14T21:34:03+00:00"
+  },
+  {
+    "scenario": "forgetful_user",
+    "malicious": false,
+    "src_ip": "203.0.113.60",
+    "usernames": [
+      "hassan.j"
+    ],
+    "start": "2026-09-15T16:38:44+00:00",
+    "end": "2026-09-15T16:43:19+00:00"
+  },
+  {
+    "scenario": "credential_stuffing",
+    "malicious": true,
+    "src_ip": "192.0.2.201",
+    "usernames": [
+      "brian.o",
+      "irene.l",
+      "test",
+      "support",
+      "amina.k",
+      "backup",
+      "guest",
+      "grace.t",
+      "admin",
+      "kamau.p",
+      "felix.a"
+    ],
+    "start": "2026-09-16T03:25:25+00:00",
+    "end": "2026-09-16T03:27:21+00:00"
+  },
+  {
+    "scenario": "unusual_country",
+    "malicious": true,
+    "src_ip": "198.51.100.140",
+    "usernames": [
+      "felix.a"
+    ],
+    "start": "2026-09-16T03:47:53+00:00",
+    "end": "2026-09-16T03:47:53+00:00"
+  },
+  {
+    "scenario": "forgetful_user",
+    "malicious": false,
+    "src_ip": "203.0.113.16",
+    "usernames": [
+      "esther.n"
+    ],
+    "start": "2026-09-16T08:54:16+00:00",
+    "end": "2026-09-16T08:58:03+00:00"
+  },
+  {
+    "scenario": "distributed_spray",
+    "malicious": true,
+    "stealth": true,
+    "src_ip": "198.18.0.95",
+    "src_ips": [
+      "198.18.0.95",
+      "198.18.0.208",
+      "198.18.0.82",
+      "198.18.0.247",
+      "198.18.0.111",
+      "198.18.0.45",
+      "198.18.0.3",
+      "198.18.0.65",
+      "198.18.0.203",
+      "198.18.0.58",
+      "198.18.0.184",
+      "198.18.0.191"
+    ],
+    "usernames": [
+      "john.k"
+    ],
+    "start": "2026-09-16T20:38:05+00:00",
+    "end": "2026-09-16T20:40:52+00:00"
+  },
+  {
+    "scenario": "account_compromise",
+    "malicious": true,
+    "src_ip": "192.0.2.201",
+    "usernames": [
+      "john.k"
+    ],
+    "start": "2026-09-16T23:52:08+00:00",
+    "end": "2026-09-16T23:52:51+00:00"
+  },
+  {
+    "scenario": "brute_force",
+    "malicious": true,
+    "src_ip": "198.51.100.77",
+    "usernames": [
+      "cynthia.w"
+    ],
+    "start": "2026-09-17T10:26:36+00:00",
+    "end": "2026-09-17T10:28:10+00:00"
+  },
+  {
+    "scenario": "distributed_spray",
+    "malicious": true,
+    "stealth": true,
+    "src_ip": "198.18.0.67",
+    "src_ips": [
+      "198.18.0.67",
+      "198.18.0.140",
+      "198.18.0.187",
+      "198.18.0.74",
+      "198.18.0.8",
+      "198.18.0.235",
+      "198.18.0.134",
+      "198.18.0.212",
+      "198.18.0.199",
+      "198.18.0.97",
+      "198.18.0.133"
+    ],
+    "usernames": [
+      "brian.o"
+    ],
+    "start": "2026-09-17T21:40:49+00:00",
+    "end": "2026-09-17T21:43:48+00:00"
+  },
+  {
+    "scenario": "unusual_country",
+    "malicious": true,
+    "src_ip": "192.0.2.201",
+    "usernames": [
+      "david.m"
+    ],
+    "start": "2026-09-19T04:21:18+00:00",
+    "end": "2026-09-19T04:21:18+00:00"
+  },
+  {
+    "scenario": "brute_force",
+    "malicious": true,
+    "src_ip": "192.0.2.201",
+    "usernames": [
+      "brian.o"
+    ],
+    "start": "2026-09-20T00:24:03+00:00",
+    "end": "2026-09-20T00:25:22+00:00"
+  },
+  {
+    "scenario": "credential_stuffing",
+    "malicious": true,
+    "src_ip": "192.0.2.201",
+    "usernames": [
+      "guest",
+      "admin",
+      "felix.a",
+      "esther.n",
+      "john.k",
+      "user",
+      "test",
+      "hassan.j",
+      "root",
+      "admin",
+      "brian.o",
+      "backup"
+    ],
+    "start": "2026-09-21T21:08:46+00:00",
+    "end": "2026-09-21T21:10:45+00:00"
+  },
+  {
+    "scenario": "credential_stuffing",
+    "malicious": true,
+    "src_ip": "192.0.2.9",
+    "usernames": [
+      "guest",
+      "backup",
+      "cynthia.w",
+      "irene.l",
+      "john.k",
+      "esther.n",
+      "support",
+      "user",
+      "brian.o",
+      "root",
+      "test",
+      "amina.k"
+    ],
+    "start": "2026-09-22T06:10:58+00:00",
+    "end": "2026-09-22T06:12:28+00:00"
+  },
+  {
+    "scenario": "account_compromise",
+    "malicious": true,
+    "src_ip": "192.0.2.9",
+    "usernames": [
+      "felix.a"
+    ],
+    "start": "2026-09-22T08:37:18+00:00",
+    "end": "2026-09-22T08:38:03+00:00"
+  },
+  {
+    "scenario": "low_and_slow",
+    "malicious": true,
+    "stealth": true,
+    "src_ip": "192.0.2.88",
+    "usernames": [
+      "irene.l"
+    ],
+    "start": "2026-09-23T02:22:14+00:00",
+    "end": "2026-09-23T02:30:35+00:00"
+  },
+  {
+    "scenario": "office_nat",
+    "malicious": false,
+    "src_ip": "203.0.113.99",
+    "usernames": [
+      "david.m",
+      "john.k",
+      "kamau.p",
+      "esther.n",
+      "lucy.s",
+      "brian.o",
+      "cynthia.w",
+      "amina.k",
+      "admin"
+    ],
+    "start": "2026-09-25T07:43:04+00:00",
+    "end": "2026-09-25T07:47:20+00:00"
+  },
+  {
+    "scenario": "unusual_country",
+    "malicious": true,
+    "src_ip": "192.0.2.201",
+    "usernames": [
+      "grace.t"
+    ],
+    "start": "2026-09-27T03:26:03+00:00",
+    "end": "2026-09-27T03:26:03+00:00"
+  },
+  {
+    "scenario": "account_compromise",
+    "malicious": true,
+    "src_ip": "192.0.2.201",
+    "usernames": [
+      "kamau.p"
+    ],
+    "start": "2026-09-27T23:36:46+00:00",
+    "end": "2026-09-27T23:37:38+00:00"
+  },
+  {
+    "scenario": "distributed_spray",
+    "malicious": true,
+    "stealth": true,
+    "src_ip": "198.18.0.99",
+    "src_ips": [
+      "198.18.0.99",
+      "198.18.0.103",
+      "198.18.0.212",
+      "198.18.0.171",
+      "198.18.0.9",
+      "198.18.0.123",
+      "198.18.0.42",
+      "198.18.0.138",
+      "198.18.0.58",
+      "198.18.0.36",
+      "198.18.0.193"
+    ],
+    "usernames": [
+      "esther.n"
+    ],
+    "start": "2026-09-28T17:05:19+00:00",
+    "end": "2026-09-28T17:08:10+00:00"
+  },
+  {
+    "scenario": "account_compromise",
+    "malicious": true,
+    "src_ip": "198.51.100.77",
+    "usernames": [
+      "esther.n"
+    ],
+    "start": "2026-09-29T01:09:48+00:00",
+    "end": "2026-09-29T01:10:46+00:00"
+  },
+  {
+    "scenario": "unusual_country",
+    "malicious": true,
+    "src_ip": "192.0.2.201",
+    "usernames": [
+      "hassan.j"
+    ],
+    "start": "2026-09-29T02:30:19+00:00",
+    "end": "2026-09-29T02:30:19+00:00"
+  },
+  {
+    "scenario": "low_and_slow",
+    "malicious": true,
+    "stealth": true,
+    "src_ip": "198.51.100.23",
+    "usernames": [
+      "esther.n"
+    ],
+    "start": "2026-10-02T02:16:06+00:00",
+    "end": "2026-10-02T02:24:30+00:00"
+  },
+  {
+    "scenario": "account_compromise",
+    "malicious": true,
+    "src_ip": "198.51.100.23",
+    "usernames": [
+      "felix.a"
+    ],
+    "start": "2026-10-03T06:17:23+00:00",
+    "end": "2026-10-03T06:18:26+00:00"
+  },
+  {
+    "scenario": "brute_force",
+    "malicious": true,
+    "src_ip": "198.51.100.77",
+    "usernames": [
+      "felix.a"
+    ],
+    "start": "2026-10-03T13:18:10+00:00",
+    "end": "2026-10-03T13:19:08+00:00"
+  },
+  {
+    "scenario": "forgetful_user",
+    "malicious": false,
+    "src_ip": "203.0.113.20",
+    "usernames": [
+      "lucy.s"
+    ],
+    "start": "2026-10-03T14:03:59+00:00",
+    "end": "2026-10-03T14:08:11+00:00"
+  },
+  {
+    "scenario": "unusual_country",
+    "malicious": true,
+    "src_ip": "192.0.2.88",
+    "usernames": [
+      "david.m"
+    ],
+    "start": "2026-10-05T03:53:33+00:00",
+    "end": "2026-10-05T03:53:33+00:00"
+  },
+  {
+    "scenario": "low_and_slow",
+    "malicious": true,
+    "stealth": true,
+    "src_ip": "198.51.100.23",
+    "usernames": [
+      "john.k"
+    ],
+    "start": "2026-10-07T07:58:16+00:00",
+    "end": "2026-10-07T08:07:16+00:00"
+  },
+  {
+    "scenario": "office_nat",
+    "malicious": false,
+    "src_ip": "203.0.113.99",
+    "usernames": [
+      "esther.n",
+      "david.m",
+      "kamau.p",
+      "admin",
+      "amina.k",
+      "cynthia.w"
+    ],
+    "start": "2026-10-07T08:06:39+00:00",
+    "end": "2026-10-07T08:10:14+00:00"
+  },
+  {
+    "scenario": "credential_stuffing",
+    "malicious": true,
+    "src_ip": "192.0.2.201",
+    "usernames": [
+      "support",
+      "kamau.p",
+      "hassan.j",
+      "admin",
+      "backup",
+      "david.m",
+      "felix.a",
+      "admin",
+      "info",
+      "root",
+      "amina.k",
+      "guest",
+      "test"
+    ],
+    "start": "2026-10-07T20:51:18+00:00",
+    "end": "2026-10-07T20:53:13+00:00"
+  },
+  {
+    "scenario": "brute_force",
+    "malicious": true,
+    "src_ip": "198.51.100.77",
+    "usernames": [
+      "irene.l"
+    ],
+    "start": "2026-10-08T15:54:31+00:00",
+    "end": "2026-10-08T15:55:48+00:00"
+  },
+  {
+    "scenario": "credential_stuffing",
+    "malicious": true,
+    "src_ip": "198.51.100.77",
+    "usernames": [
+      "grace.t",
+      "user",
+      "admin",
+      "backup",
+      "guest",
+      "support",
+      "lucy.s",
+      "test",
+      "info",
+      "john.k",
+      "admin",
+      "root"
+    ],
+    "start": "2026-10-08T22:43:06+00:00",
+    "end": "2026-10-08T22:44:57+00:00"
+  },
+  {
+    "scenario": "brute_force",
+    "malicious": true,
+    "src_ip": "198.51.100.23",
+    "usernames": [
+      "grace.t"
+    ],
+    "start": "2026-10-09T22:02:32+00:00",
+    "end": "2026-10-09T22:04:21+00:00"
+  }
+]
