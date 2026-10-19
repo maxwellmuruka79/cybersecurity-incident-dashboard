@@ -14,7 +14,10 @@ export default function Layout() {
       <aside className="flex w-60 flex-col border-r border-slate-800 p-4">
         <div className="mb-6 text-lg font-semibold text-cyan-400">Incident Dashboard</div>
         <nav className="flex-1 space-y-1">
+          <NavLink to="/" end className={link}>Dashboard</NavLink>
           <NavLink to="/incidents" className={link}>Incidents</NavLink>
+          <NavLink to="/alerts" className={link}>Alerts</NavLink>
+          <NavLink to="/events" className={link}>Events</NavLink>
         </nav>
         <div className="border-t border-slate-800 pt-4 text-xs text-slate-400">
           <div className="truncate">{session?.user.email}</div>

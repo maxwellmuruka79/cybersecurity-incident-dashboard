@@ -10,7 +10,7 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
 
-  if (!loading && session) return <Navigate to="/incidents" replace />;
+  if (!loading && session) return <Navigate to="/" replace />;
 
   async function signIn(e: FormEvent) {
     e.preventDefault();

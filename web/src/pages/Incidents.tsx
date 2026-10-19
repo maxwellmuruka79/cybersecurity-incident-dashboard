@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import { SEVERITIES, STATUSES, STATUS_LABEL } from "../types";
 import type { Incident, Severity, Status } from "../types";
@@ -10,8 +10,14 @@ export default function Incidents() {
   const [incidents, setIncidents] = useState<Incident[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [status, setStatus] = useState<Status | "all">("all");
-  const [severity, setSeverity] = useState<Severity | "all">("all");
+  // Dashboard links like /incidents?severity=critical pre-set the filters.
+  const [params] = useSearchParams();
+  const startStatus = params.get("status");
+  const startSeverity = params.get("severity");
+  const [status, setStatus] = useState<Status | "all">(
+    STATUSES.includes(startStatus as Status) ? (startStatus as Status) : "all");
+  const [severity, setSeverity] = useState<Severity | "all">(
+    SEVERITIES.includes(startSeverity as Severity) ? (startSeverity as Severity) : "all");
   const [search, setSearch] = useState("");
 
   useEffect(() => {

@@ -43,3 +43,14 @@ export interface Note {
   note: string;
   created_at: string;
 }
+
+export type EventType = "login_success" | "login_failure";
+
+export interface SecurityEvent {
+  id: number;
+  occurred_at: string;
+  username: string;
+  src_ip: string;
+  country: string;
+  event_type: EventType;
+}

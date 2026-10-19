@@ -2,8 +2,11 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { AuthProvider, useAuth } from "./lib/auth";
 import Layout from "./components/Layout";
 import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
 import Incidents from "./pages/Incidents";
 import IncidentDetail from "./pages/IncidentDetail";
+import Alerts from "./pages/Alerts";
+import Events from "./pages/Events";
 
 // Everything inside this route requires a logged-in user.
 function RequireAuth() {
@@ -25,9 +28,11 @@ export default function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route element={<RequireAuth />}>
-            <Route path="/" element={<Navigate to="/incidents" replace />} />
+            <Route path="/" element={<Dashboard />} />
             <Route path="/incidents" element={<Incidents />} />
             <Route path="/incidents/:id" element={<IncidentDetail />} />
+            <Route path="/alerts" element={<Alerts />} />
+            <Route path="/events" element={<Events />} />
           </Route>
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
