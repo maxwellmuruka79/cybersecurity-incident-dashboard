@@ -33,7 +33,7 @@ export interface AlertRow {
   description: string;
   created_at: string;
   incident_id: number | null;
-  detection_rules: { name: string } | null;
+  detection_rules: { name: string; description?: string; params?: Record<string, number> } | null;
 }
 
 export interface Note {

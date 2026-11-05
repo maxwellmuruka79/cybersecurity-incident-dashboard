@@ -1,1 +1,118 @@
 @import "tailwindcss";
+
+/* ================= THEME =================
+   The whole UI is written with the dark palette. Light mode simply swaps the
+   palette variables, so every page flips at once.
+   .keep-dark  = always dark (sidebar, login, preloader)
+   .keep-light = always light (printable report sheet)                      */
+
+html { background-color: var(--color-slate-950, #020617); color-scheme: dark; }
+body { color: var(--color-slate-100, #f1f5f9); }
+
+html.light,
+.keep-light {
+  color-scheme: light;
+  --color-slate-50: #020617;
+  --color-slate-100: #0f172a;
+  --color-slate-200: #1e293b;
+  --color-slate-300: #334155;
+  --color-slate-400: #475569;
+  --color-slate-500: #64748b;
+  --color-slate-600: #94a3b8;
+  --color-slate-700: #cbd5e1;
+  --color-slate-800: #e2e8f0;
+  --color-slate-900: #ffffff;
+  --color-slate-950: #f1f5f9;
+  --color-cyan-100: #0e7490;
+  --color-cyan-300: #0e7490;
+  --color-cyan-400: #0891b2;
+  --color-red-300: #b91c1c;
+  --color-red-400: #dc2626;
+  --color-orange-300: #c2410c;
+  --color-amber-300: #b45309;
+  --color-emerald-300: #047857;
+  --color-emerald-400: #059669;
+  --color-violet-300: #6d28d9;
+  --color-blue-300: #1d4ed8;
+}
+.keep-light { color: #0f172a; }
+
+.keep-dark {
+  color-scheme: dark;
+  color: #f1f5f9;
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  --color-slate-950: #020617;
+  --color-cyan-100: #cffafe;
+  --color-cyan-300: #67e8f9;
+  --color-cyan-400: #22d3ee;
+  --color-red-300: #fca5a5;
+  --color-red-400: #f87171;
+  --color-orange-300: #fdba74;
+  --color-amber-300: #fcd34d;
+  --color-emerald-300: #6ee7b7;
+  --color-emerald-400: #34d399;
+  --color-violet-300: #c4b5fd;
+  --color-blue-300: #93c5fd;
+}
+
+/* Buttons filled with cyan always carry white text, in both themes */
+.bg-cyan-600 { color: #fff; }
+
+/* Display density (Settings > Appearance) */
+html[data-density="compact"] td,
+html[data-density="compact"] th { padding-top: 0.35rem; padding-bottom: 0.35rem; }
+html[data-density="compact"] main { padding: 1rem; }
+
+/* Printing: only the report sheet is printed */
+@media print {
+  html, body { background: #fff !important; }
+  body * { visibility: hidden; }
+  .print-area, .print-area * { visibility: visible; }
+  .print-area { position: absolute; left: 0; top: 0; width: 100%; }
+  .no-print { display: none !important; }
+}
+
+/* ---------- SENTRIX preloader: neon robotic eye ---------- */
+/* Base styles are the FINAL (visible) state. Keyframes animate from hidden,
+   so with prefers-reduced-motion the eye simply appears, fully drawn. */
+
+@keyframes sx-fade   { from { opacity: 0; } to { opacity: 1; } }
+@keyframes sx-rise   { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes sx-draw   { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes sx-iris   { from { opacity: 0; transform: scale(0.25); } to { opacity: 1; transform: scale(1); } }
+@keyframes sx-blink  { 0%, 100% { transform: scaleY(1); } 45%, 55% { transform: scaleY(0.05); } }
+@keyframes sx-pupil  { 0%, 100% { transform: translateX(0); } 30% { transform: translateX(-9px); } 65% { transform: translateX(9px); } }
+
+.sx-wrap  { animation: sx-fade 0.4s ease-out backwards; }
+.sx-neon  { stroke-dasharray: 1; stroke-dashoffset: 0; animation: sx-draw 0.6s ease-out both; }
+.sx-iris  { transform-origin: 236px 235px; animation: sx-iris 0.55s 0.55s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.sx-blink { transform-origin: 280px 250px; animation: sx-blink 0.38s 1.15s ease-in-out both; }
+.sx-pupil { animation: sx-pupil 0.8s 1.45s ease-in-out both; }
+.sx-word  { animation: sx-rise 0.5s 0.9s ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sx-wrap, .sx-neon, .sx-iris, .sx-blink, .sx-pupil, .sx-word { animation: none !important; }
+}
+
+/* ---------- Landing page effects ---------- */
+@keyframes sx-gridscan { 0% { transform: translateY(-5%); opacity: 0; } 10%, 90% { opacity: 1; } 100% { transform: translateY(105vh); opacity: 0; } }
+@keyframes sx-float    { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes sx-fadein   { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+.sx-gridscan { animation: sx-gridscan 7s linear infinite; }
+.sx-float    { animation: sx-float 6s ease-in-out infinite; }
+.sx-fadein   { animation: sx-fadein 0.4s ease-out both; }
+
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+@media (prefers-reduced-motion: reduce) {
+  .sx-gridscan, .sx-float, .sx-fadein { animation: none !important; }
+}

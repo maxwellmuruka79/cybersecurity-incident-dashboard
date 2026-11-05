@@ -16,10 +16,20 @@ const STATUS_STYLE: Record<Status, string> = {
   false_positive: "bg-slate-500/15 text-slate-400 ring-slate-500/40",
 };
 
-const base = "inline-block rounded-full px-2.5 py-0.5 text-xs font-medium ring-1 ring-inset";
+const base = "rounded-full px-2.5 py-0.5 text-xs font-medium ring-1 ring-inset";
 
 export function SeverityBadge({ severity }: { severity: Severity }) {
-  return <span className={`${base} ${SEVERITY_STYLE[severity]} capitalize`}>{severity}</span>;
+  return (
+    <span className={`${base} ${SEVERITY_STYLE[severity]} inline-flex items-center gap-1.5 capitalize`}>
+      {severity === "critical" && (
+        <span className="relative flex h-1.5 w-1.5">
+          <span className="absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75 motion-safe:animate-ping" />
+          <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-red-500" />
+        </span>
+      )}
+      {severity}
+    </span>
+  );
 }
 
 export function StatusBadge({ status }: { status: Status }) {
