@@ -15,6 +15,9 @@ import Events from "./pages/Events";
 import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
 import Team from "./pages/Team";
+import LiveFeed from "./pages/LiveFeed";
+import PasswordAuditor from "./pages/PasswordAuditor";
+import Simulator from "./pages/Simulator";
 
 // Everything inside this route requires a logged-in user.
 function RequireAuth() {
@@ -65,6 +68,9 @@ function Shell() {
             <Route path="/reports" element={<Reports />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/team" element={<Team />} />
+            <Route path="/live" element={<LiveFeed />} />
+            <Route path="/tools/password" element={<PasswordAuditor />} />
+            <Route path="/tools/simulator" element={<Simulator />} />
           </Route>
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

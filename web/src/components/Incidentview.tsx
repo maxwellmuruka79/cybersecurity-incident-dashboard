@@ -6,7 +6,7 @@ import { useProfiles } from "../lib/useProfiles";
 import { SEVERITIES, STATUSES, STATUS_LABEL } from "../types";
 import type { AlertRow, Incident, Note, Severity, Status } from "../types";
 import { SeverityBadge, StatusBadge } from "./Badges";
-import AlertTimeline from "./AlertTimeline";
+import AlertTimeline from "./AlertTime";
 import { formatDate } from "../lib/format";
 
 interface Props {

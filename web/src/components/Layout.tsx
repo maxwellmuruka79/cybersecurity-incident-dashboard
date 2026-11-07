@@ -5,13 +5,25 @@ import { useSettings } from "../lib/settings";
 import { NotificationsProvider } from "../lib/notifications";
 import EyeLogo from "./EyeLogo";
 
-const NAV = [
-  { to: "/dashboard", label: "Dashboard" },
-  { to: "/incidents", label: "Incidents" },
-  { to: "/alerts", label: "Alerts" },
-  { to: "/events", label: "Events" },
-  { to: "/reports", label: "Reports" },
-  { to: "/settings", label: "Settings" },
+const GROUPS = [
+  {
+    title: "Operate",
+    items: [
+      { to: "/dashboard", label: "Dashboard" },
+      { to: "/live", label: "Live feed" },
+      { to: "/incidents", label: "Incidents" },
+      { to: "/alerts", label: "Alerts" },
+      { to: "/events", label: "Events" },
+    ],
+  },
+  {
+    title: "Analyse",
+    items: [
+      { to: "/reports", label: "Reports" },
+      { to: "/tools/password", label: "Password Auditor" },
+      { to: "/tools/simulator", label: "What-if Simulator" },
+    ],
+  },
 ];
 
 function ThemeIcon({ light }: { light: boolean }) {
@@ -33,7 +45,8 @@ function ThemeIcon({ light }: { light: boolean }) {
 export default function Layout() {
   const { session, role } = useAuth();
   const { resolvedTheme, update } = useSettings();
-  const nav = role === "admin" ? [...NAV, { to: "/team", label: "Team" }] : NAV;
+  const manage = [{ to: "/settings", label: "Settings" }, ...(role === "admin" ? [{ to: "/team", label: "Team" }] : [])];
+  const groups = [...GROUPS, { title: "Manage", items: manage }];
   const link = ({ isActive }: { isActive: boolean }) =>
     `block rounded-lg px-3 py-2 text-sm transition-colors ${
       isActive ? "bg-cyan-500/15 text-cyan-300" : "text-slate-400 hover:bg-slate-800 hover:text-slate-100"
@@ -48,9 +61,16 @@ export default function Layout() {
             <EyeLogo className="w-14" />
             <span className="text-lg font-semibold tracking-[0.3em] text-cyan-300">SENTRIX</span>
           </div>
-          <nav className="flex-1 space-y-1">
-            {nav.map((n) => (
-              <NavLink key={n.to} to={n.to} className={link}>{n.label}</NavLink>
+          <nav className="flex-1 space-y-4 overflow-y-auto">
+            {groups.map((g) => (
+              <div key={g.title}>
+                <p className="mb-1 px-3 text-[10px] uppercase tracking-[0.25em] text-slate-600">{g.title}</p>
+                <div className="space-y-1">
+                  {g.items.map((n) => (
+                    <NavLink key={n.to} to={n.to} className={link}>{n.label}</NavLink>
+                  ))}
+                </div>
+              </div>
             ))}
           </nav>
           <div className="border-t border-slate-800 pt-4 text-xs text-slate-400">

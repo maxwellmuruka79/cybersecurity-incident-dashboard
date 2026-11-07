@@ -4,6 +4,7 @@ import { Link, Navigate } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import { useAuth } from "../lib/auth";
 import EyeLogo from "../components/EyeLogo";
+import PasswordMeter from "../components/PasswordMeter";
 
 export default function Signup() {
   const { session, loading } = useAuth();
@@ -61,6 +62,7 @@ export default function Signup() {
           onChange={(e) => setEmail(e.target.value)} required />
         <input className={input} type="password" placeholder="Password (8+ characters)" autoComplete="new-password"
           value={password} onChange={(e) => setPassword(e.target.value)} required />
+        <PasswordMeter password={password} compact />
         <input className={input} type="password" placeholder="Confirm password" autoComplete="new-password"
           value={confirm} onChange={(e) => setConfirm(e.target.value)} required />
         {error && <p className="rounded bg-red-500/10 p-2 text-sm text-red-300">{error}</p>}
