@@ -5,6 +5,7 @@ import { useAuth } from "../lib/auth";
 import { useSettings, WIDGET_LABELS } from "../lib/settings";
 import type { ChartStyle, Density, RefreshMode, RouteChannel, ThemeChoice } from "../lib/settings";
 import { useNotify } from "../lib/notifications";
+import MfaCard from "../components/MfaCard";
 import { playAlertSound } from "../lib/sound";
 import { SEVERITIES } from "../types";
 
@@ -238,6 +239,8 @@ export default function Settings() {
           <p className="mt-2 text-xs text-amber-300">Desktop notifications are blocked in your browser settings for this site.</p>
         )}
       </Card>
+
+      <MfaCard />
 
       <Card title="Account and security">
         <Row label="Signed in as" hint={`Your role: ${role ?? "..."}`}>

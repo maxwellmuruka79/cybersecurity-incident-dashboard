@@ -6,6 +6,7 @@ import Layout from "./components/Layout";
 import Preloader from "./components/Preloader";
 import Landing from "./pages/Landing";
 import Login from "./pages/Login";
+import MfaChallenge from "./pages/MfaChallenge";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import Incidents from "./pages/Incidents";
@@ -21,7 +22,7 @@ import Simulator from "./pages/Simulator";
 
 // Everything inside this route requires a logged-in user.
 function RequireAuth() {
-  const { session, loading } = useAuth();
+  const { session, loading, mfaRequired } = useAuth();
   if (loading) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-slate-950 text-slate-400">
@@ -29,7 +30,10 @@ function RequireAuth() {
       </div>
     );
   }
-  return session ? <Layout /> : <Navigate to="/login" replace />;
+  if (!session) return <Navigate to="/login" replace />;
+  // Password accepted, but the second factor has not been entered yet: nothing else is shown
+  if (mfaRequired) return <MfaChallenge />;
+  return <Layout />;
 }
 
 // The preloader plays every time the site loads (first visit and browser refresh).
