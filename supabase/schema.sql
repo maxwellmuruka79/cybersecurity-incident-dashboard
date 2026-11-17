@@ -6,7 +6,8 @@
 create table if not exists profiles (
     id         uuid primary key references auth.users(id) on delete cascade,
     full_name  text,
-    role       text not null default 'analyst' check (role in ('admin', 'analyst', 'viewer')),
+    email      text,
+    role       text not null default 'viewer' check (role in ('admin', 'analyst', 'viewer')),
     created_at timestamptz not null default now()
 );
 
@@ -14,7 +15,8 @@ create table if not exists profiles (
 create or replace function handle_new_user() returns trigger
 language plpgsql security definer set search_path = public as $$
 begin
-    insert into profiles (id, full_name) values (new.id, new.raw_user_meta_data->>'full_name');
+    insert into profiles (id, full_name, email)
+    values (new.id, new.raw_user_meta_data->>'full_name', new.email);
     return new;
 end $$;
 
@@ -131,3 +133,11 @@ create policy "update incidents" on incidents for update to authenticated
     using (can_write()) with check (can_write());
 create policy "add notes" on incident_notes for insert to authenticated
     with check (can_write() and author = auth.uid());
+
+-- Only admins may change profiles (used by the Team page to change roles)
+create or replace function is_admin() returns boolean
+language sql stable security definer set search_path = public as $$
+    select exists (select 1 from profiles where id = auth.uid() and role = 'admin');
+$$;
+create policy "admins update profiles" on profiles for update to authenticated
+    using (is_admin()) with check (is_admin());
