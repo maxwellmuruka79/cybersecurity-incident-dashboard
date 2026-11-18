@@ -8,11 +8,6 @@
     }
   },
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": {
-        "service": "web"
-      }
-    }
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
